@@ -4,8 +4,8 @@
 
 [node name="Gut" type="Control"]
 margin_top = -2.0
-margin_right = 1020.0
-margin_bottom = 598.0
+margin_right = 1023.0
+margin_bottom = 596.0
 rect_min_size = Vector2( 740, 250 )
 script = ExtResource( 1 )
 __meta__ = {
