@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://asset/Bébé_Phoque_de_Weddell_-_Baby_Weddell_Seal.jpg" type="Texture" id=1]
+[ext_resource path="res://scene/tabletop/phoq.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 80.1353, 53.4738 )
+
+[node name="Node" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+position = Vector2( 510.952, 235.169 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Node2D/Area2D"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+
+[connection signal="input_event" from="Node2D/Area2D" to="Node2D/Area2D" method="_on_Area2D_input_event"]
