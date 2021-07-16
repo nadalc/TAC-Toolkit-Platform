@@ -25,10 +25,6 @@ _global_script_classes=[ {
 "path": "res://source/scenario/Chapter.gd"
 }, {
 "base": "Node",
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
 "class": "Deck",
 "language": "GDScript",
 "path": "res://source/util/Deck.gd"
@@ -44,7 +40,6 @@ _global_script_classes=[ {
 "path": "res://source/util/HelloCards.gd"
 }, {
 "base": "Node",
->>>>>>> feature-scenario
 "class": "Participant",
 "language": "GDScript",
 "path": "res://source/participant/Participant.gd"
@@ -55,10 +50,6 @@ _global_script_classes=[ {
 "path": "res://source/participant/Role.gd"
 }, {
 "base": "Node",
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> feature-scenario
 "class": "Scenario",
 "language": "GDScript",
 "path": "res://source/scenario/Scenario.gd"
@@ -87,19 +78,11 @@ _global_script_class_icons={
 "Administator": "",
 "Card": "",
 "Chapter": "",
-<<<<<<< HEAD
-"Participant": "",
-"Role": "",
-=======
-<<<<<<< Updated upstream
-=======
 "Deck": "",
 "Designer": "",
 "HelloCards": "",
 "Participant": "",
 "Role": "",
->>>>>>> Stashed changes
->>>>>>> feature-scenario
 "Scenario": "",
 "Spectator": "",
 "Step": "",
