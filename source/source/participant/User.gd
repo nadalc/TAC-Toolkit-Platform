@@ -1,16 +1,30 @@
-extends Node
+extends Role
 
+class_name User
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+# =-= Method =-=
 
+func joinTabletop() -> void:
+	Designer.new().joinTabletop()
+	
+func leaveTabletop(participant : Participant) -> void:
+	Designer.new().leaveTabletop(participant)
+ 
+func viewScenario(step : Step) -> void:
+	Designer.new().viewScenario(step)
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func viewPersona() -> void:
+	Designer.new().viewPersona()
 
+func addCard(cardType : String, step : Step) -> void:
+	Designer.new().addCard(cardType, step)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func removeCard(card : Card, step : Step) -> void:
+	Designer.new().removeCard(card, step)
+
+func addNote(text : String, card : Card, id : int) -> void:
+	Designer.new().addNote(text, card, id)
+
+func choosePathOfScenario(path) -> void:
+	#chose a path of the scenario
+	pass

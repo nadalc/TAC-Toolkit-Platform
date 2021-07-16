@@ -25,7 +25,7 @@ func addCard(cardType, step):
 func removeCard(Card, step):
 	pass
 
-func addNote(text, card):
+func addNote(text, card, id):
 	pass
 
 func choosePathOfScenario(path):

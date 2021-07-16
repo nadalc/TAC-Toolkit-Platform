@@ -24,7 +24,7 @@ func getId() -> int:
 	return id
 
 func setRole(p_role) -> void:
-	self.role = role
+	self.role = p_role
 
 func getRole() -> Role:
 	return role
