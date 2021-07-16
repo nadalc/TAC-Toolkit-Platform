@@ -2,42 +2,45 @@ extends Node
 
 class_name Step
 
-var cards : Array
+var cards : Dictionary
 var visibleCards : Array
 
 var stepInformation : String
 
+var deck : Deck
+
 func _init(p_stepInformation : String = "") -> void:
-	self.cards = []
+	self.cards = {}
 	self.visibleCards = []
 	self.stepInformation = p_stepInformation
+	self.deck = HelloCards.new()
 
 # =-= Method =-=
-func addCard(card : Card) -> void:
-	if card == null:
-		return
+func addCard(cardType : String) -> void:
+	if not cards.has(cardType):
+		var card : Card = deck.getCard(cardType)
+		if not(card == null):
+			cards[cardType] = card
 	
-	cards.append(card)
-	visibleCards.append(card)
+	visibleCards.append(cards.get(cardType))
 	
 func hideCard(card: Card) -> void:
-	if card == null or not(cards.has(card)) or not(visibleCards.has(card)):
+	if card == null or not(card in cards.values()) or not(visibleCards.has(card)):
 		return
 	
 	visibleCards.erase(card)
 
-
 func showCard(card: Card) -> void:
-	if card == null or not(cards.has(card)) or visibleCards.has(card):
+	if card == null or not(card in cards.values()) or visibleCards.has(card):
 		return
 	visibleCards.append(card)
 
-func getCard(index : int) -> Card:
-	if index > self.cards.size() -1 or index < 0:
+func getCard(cardType : String) -> Card:
+	if not cards.has(cardType):
 		return null
-	return self.cards[index]
+	return cards.get(cardType)
 
-func getCards() -> Array :
+func getCards() -> Dictionary :
 	return self.cards
 
 func getStepInformation() -> String :
