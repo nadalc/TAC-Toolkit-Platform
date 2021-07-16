@@ -20,6 +20,16 @@ _global_script_classes=[ {
 "path": "res://source/scenario/Chapter.gd"
 }, {
 "base": "Node",
+"class": "Participant",
+"language": "GDScript",
+"path": "res://source/participant/Participant.gd"
+}, {
+"base": "Node",
+"class": "Role",
+"language": "GDScript",
+"path": "res://source/participant/Role.gd"
+}, {
+"base": "Node",
 "class": "Scenario",
 "language": "GDScript",
 "path": "res://source/scenario/Scenario.gd"
@@ -32,6 +42,8 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Card": "",
 "Chapter": "",
+"Participant": "",
+"Role": "",
 "Scenario": "",
 "Step": ""
 }
