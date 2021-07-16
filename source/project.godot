@@ -40,7 +40,6 @@ _global_script_classes=[ {
 "path": "res://source/util/HelloCards.gd"
 }, {
 "base": "Node",
->>>>>>> feature-scenario
 "class": "Participant",
 "language": "GDScript",
 "path": "res://source/participant/Participant.gd"
