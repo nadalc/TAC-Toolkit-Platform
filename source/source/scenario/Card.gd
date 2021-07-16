@@ -24,10 +24,15 @@ func removeNote(id : int) -> void:
 	notes.erase(id)
 
 func updateNote(id : int, text : String) -> void:
-	if id == null or not(notes.has(id)):
+	if id == null :
 		return
+	if not(notes.has(id)):
+		addNote(id)
 	
-	notes[id] = text
+	if text == "" :
+		removeNote(id)
+	else :
+		notes[id] = text
 
 func getNote(id) -> String:
 	if id == null or not(notes.has(id)):

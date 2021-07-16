@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Role",
+"class": "Administator",
+"language": "GDScript",
+"path": "res://source/participant/Administrator.gd"
+}, {
 "base": "Node",
 "class": "Card",
 "language": "GDScript",
@@ -20,6 +25,26 @@ _global_script_classes=[ {
 "path": "res://source/scenario/Chapter.gd"
 }, {
 "base": "Node",
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+"class": "Deck",
+"language": "GDScript",
+"path": "res://source/util/Deck.gd"
+}, {
+"base": "Role",
+"class": "Designer",
+"language": "GDScript",
+"path": "res://source/participant/Designer.gd"
+}, {
+"base": "Deck",
+"class": "HelloCards",
+"language": "GDScript",
+"path": "res://source/util/HelloCards.gd"
+}, {
+"base": "Node",
+>>>>>>> feature-scenario
 "class": "Participant",
 "language": "GDScript",
 "path": "res://source/participant/Participant.gd"
@@ -30,22 +55,56 @@ _global_script_classes=[ {
 "path": "res://source/participant/Role.gd"
 }, {
 "base": "Node",
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> feature-scenario
 "class": "Scenario",
 "language": "GDScript",
 "path": "res://source/scenario/Scenario.gd"
+}, {
+"base": "Role",
+"class": "Spectator",
+"language": "GDScript",
+"path": "res://source/participant/Spectator.gd"
 }, {
 "base": "Node",
 "class": "Step",
 "language": "GDScript",
 "path": "res://source/scenario/Step.gd"
+}, {
+"base": "Deck",
+"class": "TacCards",
+"language": "GDScript",
+"path": "res://source/util/TacCards.gd"
+}, {
+"base": "Role",
+"class": "User",
+"language": "GDScript",
+"path": "res://source/participant/User.gd"
 } ]
 _global_script_class_icons={
+"Administator": "",
 "Card": "",
 "Chapter": "",
+<<<<<<< HEAD
 "Participant": "",
 "Role": "",
+=======
+<<<<<<< Updated upstream
+=======
+"Deck": "",
+"Designer": "",
+"HelloCards": "",
+"Participant": "",
+"Role": "",
+>>>>>>> Stashed changes
+>>>>>>> feature-scenario
 "Scenario": "",
-"Step": ""
+"Spectator": "",
+"Step": "",
+"TacCards": "",
+"User": ""
 }
 
 [application]

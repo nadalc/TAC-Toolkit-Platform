@@ -1,28 +1,28 @@
 extends "res://addons/gut/test.gd"
 
-#addCard(card)
+#addCard(cardType)
 
 func test_addCard_cards() -> void:
 	var step : Step = Step.new()
-	var card : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(card)
+	step.addCard(cardType)
 	
-	assert_eq(step.cards[0], card, "card should be present in cards")
+	assert_eq(step.cards.size(), 1, "card should be present in cards")
 
 func test_addCard_visibleCard() -> void:
 	var step : Step = Step.new()
-	var card : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(card)
+	step.addCard(cardType)
 	
-	assert_eq(step.visibleCards[0], card, "card should be present in visibleCard")
+	assert_eq(step.visibleCards.size(), 1, "card should be present in visibleCard")
 
 func test_addCard_null() -> void:
 	var step : Step = Step.new()
-	var card = null
+	var cardType : String = ""
 	
-	step.addCard(card)
+	step.addCard(cardType)
 	
 	assert_eq(step.cards.size(), 0, "card is not valid (null), the size of cards should not increase")
 
@@ -30,36 +30,48 @@ func test_addCard_null() -> void:
 
 func test_hideCard_cards() -> void:
 	var step : Step = Step.new()
-	var card : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(card)
+	step.addCard(cardType)
+	
+	var card = step.cards.get(cardType)
+	
 	step.hideCard(card)
 	
-	assert_eq(step.cards[0], card, "card should be in cards even if it is hide")
+	assert_eq(step.cards[cardType], card, "card should be in cards even if it is hide")
 
 func test_hideCard_visibleCard() -> void:
 	var step : Step = Step.new()
-	var card : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(card)
+	step.addCard(cardType)
+	
+	var card = step.cards.get(cardType)
+	
 	step.hideCard(card)
 	
 	assert_eq(step.visibleCards.size(), 0, "visibleCard should be empty")
 
 func test_hideCard_null() -> void:
 	var step : Step = Step.new()
-	var card : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(card)
+	step.addCard(cardType)
+	
+	var card = step.cards.get(cardType)
+	
 	step.hideCard(null)
 	
 	assert_eq(step.visibleCards[0], card, "card is not valid (null), visibleCard should not be empty")
 
 func test_hideCard_allReadyHide() -> void:
 	var step : Step = Step.new()
-	var card : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(card)
+	step.addCard(cardType)
+	
+	var card = step.cards.get(cardType)
+	
 	step.hideCard(card)
 	step.hideCard(card)
 	
@@ -69,19 +81,25 @@ func test_hideCard_allReadyHide() -> void:
 
 func test_showCard_cards() -> void:
 	var step : Step = Step.new()
-	var card : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(card)
+	step.addCard(cardType)
+	
+	var card = step.cards.get(cardType)
+	
 	step.hideCard(card)
 	step.showCard(card)
 	
-	assert_eq(step.cards[0], card, "card should be in cards")
+	assert_eq(step.cards[cardType], card, "card should be in cards")
 
 func test_showCard_visibleCard() -> void:
 	var step : Step = Step.new()
-	var card : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(card)
+	step.addCard(cardType)
+	
+	var card = step.cards.get(cardType)
+	
 	step.hideCard(card)
 	step.showCard(card)
 	
@@ -97,9 +115,12 @@ func test_showCard_invalidCard() -> void:
 
 func test_showCard_null() -> void:
 	var step : Step = Step.new()
-	var card : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(card)
+	step.addCard(cardType)
+	
+	var card = step.cards.get(cardType)
+	
 	step.hideCard(card)
 	step.showCard(null)
 	
@@ -107,9 +128,12 @@ func test_showCard_null() -> void:
 
 func test_showCard_allReadyShow() -> void:
 	var step : Step = Step.new()
-	var card : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(card)
+	step.addCard(cardType)
+	
+	var card = step.cards.get(cardType)
+	
 	step.hideCard(card)
 	step.showCard(card)
 	step.showCard(card)
@@ -120,31 +144,26 @@ func test_showCard_allReadyShow() -> void:
 
 func test_getCard_validIndex() -> void:
 	var step : Step = Step.new()
-	var tmp : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(tmp)
+	step.addCard(cardType)
 	
-	var card : Card = step.getCard(0)
+	var tmp = step.cards.get(cardType)
+	
+	var card : Card = step.getCard(cardType)
 	
 	assert_eq(card, tmp, "card should be the same as the card added")
 
-func test_getCard_tooHighIndex() -> void:
+func test_getCard_nonValideCardType() -> void:
 	var step : Step = Step.new()
-	var tmp : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(tmp)
+	step.addCard(cardType)
 	
-	var card : Card = step.getCard(1)
+	var tmp = step.cards.get(cardType)
 	
-	assert_eq(card, null, "card should be null")
-
-func test_getCard_negativeIndex() -> void:
-	var step : Step = Step.new()
-	var tmp : Card = Card.new()
 	
-	step.addCard(tmp)
-	
-	var card : Card = step.getCard(-1)
+	var card : Card = step.getCard("")
 	
 	assert_eq(card, null, "card should be null")
 
@@ -152,13 +171,16 @@ func test_getCard_negativeIndex() -> void:
 
 func test_getCards() -> void:
 	var step : Step = Step.new()
-	var tmp : Card = Card.new()
+	var cardType : String = "Hello World!"
 	
-	step.addCard(tmp)
+	step.addCard(cardType)
 	
-	var cards : Array = step.getCards()
+	var tmp = step.cards
 	
-	assert_eq(cards, [tmp], "card should be null")
+	
+	var cards : Dictionary = step.getCards()
+	
+	assert_eq(cards, tmp, "card should be null")
 
 #getStepInformation()
 func test_getStepInformation() -> void:
