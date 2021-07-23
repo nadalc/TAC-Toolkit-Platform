@@ -1,27 +1,376 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://asset/Bébé_Phoque_de_Weddell_-_Baby_Weddell_Seal.jpg" type="Texture" id=1]
-[ext_resource path="res://scene/tabletop/phoq.gd" type="Script" id=2]
+[ext_resource path="res://asset/Sans titre.png" type="Texture" id=1]
+[ext_resource path="res://asset/deck_1.png" type="Texture" id=2]
+[ext_resource path="res://scene/tabletop/Tabletop.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 80.1353, 53.4738 )
+extents = Vector2( 15.1759, 206.212 )
 
-[node name="Node" type="Node"]
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 1.25004, 1.25004 )
+script = ExtResource( 3 )
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Area2D" type="Area2D" parent="Node2D"]
-position = Vector2( 510.952, 235.169 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Node2D/Area2D"]
-scale = Vector2( 0.2, 0.2 )
+[node name="tabletop" type="Sprite" parent="."]
+visible = false
+position = Vector2( 509.75, 274.75 )
+scale = Vector2( 0.966235, 1.00897 )
 texture = ExtResource( 1 )
 
-[connection signal="input_event" from="Node2D/Area2D" to="Node2D/Area2D" method="_on_Area2D_input_event"]
+[node name="hand" type="Node2D" parent="."]
+
+[node name="ColorRect3" type="ColorRect" parent="hand"]
+margin_top = 416.0
+margin_right = 108.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 248, 104 )
+mouse_filter = 2
+color = Color( 0.133333, 0.235294, 0.780392, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="hand"]
+margin_left = 108.0
+margin_top = 416.0
+margin_right = 216.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 140, 104 )
+mouse_filter = 2
+color = Color( 0.329412, 0.14902, 0.14902, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="hand"]
+margin_left = 216.0
+margin_top = 416.0
+margin_right = 324.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 248, 104 )
+mouse_filter = 2
+color = Color( 0.133333, 0.235294, 0.780392, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="hand"]
+margin_left = 324.0
+margin_top = 416.0
+margin_right = 432.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 140, 104 )
+mouse_filter = 2
+color = Color( 0.329412, 0.14902, 0.14902, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="hand"]
+margin_left = 432.0
+margin_top = 416.0
+margin_right = 540.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 248, 104 )
+mouse_filter = 2
+color = Color( 0.133333, 0.235294, 0.780392, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="hand"]
+margin_left = 540.0
+margin_top = 416.0
+margin_right = 648.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 140, 104 )
+mouse_filter = 2
+color = Color( 0.329412, 0.14902, 0.14902, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="hand"]
+margin_left = 648.0
+margin_top = 416.0
+margin_right = 756.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 248, 104 )
+mouse_filter = 2
+color = Color( 0.133333, 0.235294, 0.780392, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="hand"]
+margin_left = 756.0
+margin_top = 416.0
+margin_right = 864.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 140, 104 )
+mouse_filter = 2
+color = Color( 0.329412, 0.14902, 0.14902, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="hand"]
+margin_left = 864.0
+margin_top = 416.0
+margin_right = 1024.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 140, 104 )
+mouse_filter = 2
+color = Color( 0.168627, 0.329412, 0.14902, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="hand"]
+margin_left = 1.0
+margin_top = 391.0
+margin_right = 323.0
+margin_bottom = 412.0
+mouse_filter = 2
+color = Color( 0.172549, 0.027451, 0.686275, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="hand"]
+margin_left = 865.0
+margin_top = 391.0
+margin_right = 1023.0
+margin_bottom = 412.0
+mouse_filter = 2
+color = Color( 0.635294, 0.027451, 0.686275, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="hand"]
+margin_left = 324.0
+margin_top = 391.0
+margin_right = 863.0
+margin_bottom = 412.0
+mouse_filter = 2
+color = Color( 0.686275, 0.6, 0.027451, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="board" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="board"]
+margin_left = 15.0
+margin_top = 20.0
+margin_right = 735.0
+margin_bottom = 378.0
+mouse_filter = 2
+color = Color( 0.517647, 0.156863, 0.156863, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="board"]
+margin_left = 755.0
+margin_top = 20.0
+margin_right = 1144.0
+margin_bottom = 378.0
+mouse_filter = 2
+color = Color( 0.517647, 0.156863, 0.156863, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="board"]
+margin_left = 52.0
+margin_top = 84.0
+margin_right = 221.0
+margin_bottom = 313.0
+mouse_filter = 2
+color = Color( 0.156863, 0.517647, 0.517647, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="board"]
+margin_left = 286.0
+margin_top = 84.0
+margin_right = 455.0
+margin_bottom = 313.0
+mouse_filter = 2
+color = Color( 0.156863, 0.517647, 0.517647, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect7" type="ColorRect" parent="board"]
+margin_left = 179.0
+margin_top = 18.0
+margin_right = 563.0
+margin_bottom = 70.0
+mouse_filter = 2
+color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect12" type="ColorRect" parent="board"]
+margin_left = 919.0
+margin_top = 20.0
+margin_right = 1067.0
+margin_bottom = 72.0
+mouse_filter = 2
+color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect8" type="ColorRect" parent="board"]
+margin_left = 36.4697
+margin_top = 329.116
+margin_right = 236.47
+margin_bottom = 356.116
+mouse_filter = 2
+color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="board"]
+margin_left = 270.659
+margin_top = 329.116
+margin_right = 470.659
+margin_bottom = 356.116
+mouse_filter = 2
+color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="board"]
+margin_left = 511.997
+margin_top = 329.116
+margin_right = 711.997
+margin_bottom = 356.116
+mouse_filter = 2
+color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect11" type="ColorRect" parent="board"]
+margin_left = 777.299
+margin_top = 329.116
+margin_right = 977.299
+margin_bottom = 356.116
+mouse_filter = 2
+color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="board"]
+margin_left = 528.0
+margin_top = 84.0
+margin_right = 698.0
+margin_bottom = 313.0
+mouse_filter = 2
+color = Color( 0.156863, 0.517647, 0.517647, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="board"]
+margin_left = 791.51
+margin_top = 84.0
+margin_right = 961.51
+margin_bottom = 313.0
+mouse_filter = 2
+color = Color( 0.156863, 0.517647, 0.517647, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="card" type="Control" parent="board"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="board/card"]
+margin_left = 62.0
+margin_top = 94.0
+margin_right = 210.0
+margin_bottom = 303.0
+mouse_filter = 2
+color = Color( 0.016098, 0.824219, 0.0666056, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="board/card"]
+margin_left = 297.0
+margin_top = 94.0
+margin_right = 372.0
+margin_bottom = 197.0
+mouse_filter = 2
+color = Color( 0.016098, 0.824219, 0.0666056, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="board/card"]
+margin_left = 297.0
+margin_top = 200.404
+margin_right = 372.0
+margin_bottom = 303.404
+mouse_filter = 2
+color = Color( 0.016098, 0.824219, 0.0666056, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="board/card"]
+margin_left = 374.67
+margin_top = 94.0
+margin_right = 449.67
+margin_bottom = 197.0
+mouse_filter = 2
+color = Color( 0.016098, 0.824219, 0.0666056, 0.392157 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 53, 496 )
+scale = Vector2( 0.053202, 0.053872 )
+texture = ExtResource( 2 )
+normal_map = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 80, 10, 2030, 2970 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 1, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1009.36, 222.279 )
+shape = SubResource( 1 )
+
+[node name="Button" type="Button" parent="Area2D"]
+margin_left = 992.0
+margin_top = 20.0
+margin_right = 1023.0
+margin_bottom = 356.0
+mouse_filter = 2
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
