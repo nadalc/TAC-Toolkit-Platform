@@ -1,17 +1,38 @@
 extends Node2D
 
-var state
+var state : String
+var scenario : Scenario
 
 func _ready():
 	state = "init"
+	initTabletop()
+
+func initTabletop():
+	var chapters : Array = [
+		Chapter.new([
+			Step.new(),
+			Step.new(),
+			Step.new()
+			]),
+		Chapter.new([
+			Step.new()
+			])
+		]
+	scenario = Scenario.new(chapters)
+	
+	for chapter in scenario.getChapters():
+		if chapter is Chapter:
+			chapter.getChapterInformation()
+	
 
 func _process(delta):
-	if state == "init":
-		pass
-	elif state == "scroll":
-		$"./board".position.x -= 2
-	elif state == "scroll+":
-		$"./board".position.x -= 10
+	match[state]:
+		["init"]:
+			pass
+		["scroll"]:
+			$"./board".position.x -= 2
+		["scroll+"]:
+			$"./board".position.x -= 10
 
 func _on_Area2D_mouse_entered():
 	state = "scroll"

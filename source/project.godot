@@ -105,7 +105,7 @@ _global_script_class_icons={
 [application]
 
 config/name="TAC Toolkit System"
-run/main_scene="res://scene/tabletop/Tabletop.tscn"
+run/main_scene="res://scene/tabletop/Hand.tscn"
 config/icon="res://miscellaneous/icon.png"
 
 [display]
