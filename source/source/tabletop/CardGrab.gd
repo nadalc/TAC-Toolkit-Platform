@@ -2,6 +2,8 @@ extends Node
 
 class_name CardGrab
 
+var id : int
+
 # =-= Method =-=
 func move(dx, dy) -> void:
 	var node = $"." # $ = get_node()
@@ -10,4 +12,8 @@ func move(dx, dy) -> void:
 
 func highlight(boolean : bool):
 	var node = $"./Sprite"
-	#print new texture
+	match boolean:
+		true :
+			node.texture = TacDrawCard.new().getValidCard(id)
+		false :
+			node.texture = TacDrawCard.new().getCard(id)
