@@ -39,15 +39,30 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://source/participant/Designer.gd"
 }, {
+"base": "Node",
+"class": "DrawCard",
+"language": "GDScript",
+"path": "res://source/util/DrawCard.gd"
+}, {
 "base": "Deck",
 "class": "HelloCards",
 "language": "GDScript",
 "path": "res://source/util/HelloCards.gd"
 }, {
 "base": "Node",
+"class": "Math_",
+"language": "GDScript",
+"path": "res://source/util/Math_.gd"
+}, {
+"base": "Node",
 "class": "Participant",
 "language": "GDScript",
 "path": "res://source/participant/Participant.gd"
+}, {
+"base": "Node",
+"class": "RandomC",
+"language": "GDScript",
+"path": "res://source/util/RandColor.gd"
 }, {
 "base": "Node",
 "class": "Role",
@@ -79,6 +94,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://source/util/TacCards.gd"
 }, {
+"base": "DrawCard",
+"class": "TacDrawCard",
+"language": "GDScript",
+"path": "res://source/util/TacDrawCard.gd"
+}, {
 "base": "Role",
 "class": "User",
 "language": "GDScript",
@@ -91,22 +111,26 @@ _global_script_class_icons={
 "Chapter": "",
 "Deck": "",
 "Designer": "",
+"DrawCard": "",
 "HelloCards": "",
+"Math_": "",
 "Participant": "",
+"RandomC": "",
 "Role": "",
 "Scenario": "",
 "Spectator": "",
 "Step": "",
 "Tabletop": "",
 "TacCards": "",
+"TacDrawCard": "",
 "User": ""
 }
 
 [application]
 
 config/name="TAC Toolkit System"
-run/main_scene="res://scene/tabletop/Hand.tscn"
-config/icon="res://miscellaneous/icon.png"
+run/main_scene="res://scene/tabletop/Tabletop.tscn"
+config/icon="res://asset/logo.png"
 
 [display]
 
@@ -137,5 +161,6 @@ common/enable_pause_aware_picking=true
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 2d/snapping/use_gpu_pixel_snap=true
+environment/default_clear_color=Color( 0.71, 0.70361, 0.5822, 1 )
 quality/filters/msaa=4
 environment/default_environment="res://miscellaneous/default_env.tres"
