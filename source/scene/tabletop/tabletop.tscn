@@ -1,376 +1,130 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://asset/Sans titre.png" type="Texture" id=1]
-[ext_resource path="res://asset/deck_1.png" type="Texture" id=2]
+[ext_resource path="res://scene/tabletop/hand/Hand.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scene/tabletop/Tabletop.gd" type="Script" id=3]
+[ext_resource path="res://scene/tabletop/board/Board.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/tabletop/Area2D.gd" type="Script" id=5]
+[ext_resource path="res://asset/color_arrow.png" type="Texture" id=6]
+[ext_resource path="res://asset/color.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15.1759, 163.88 )
+extents = Vector2( 15.844, 163.88 )
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 735.962, 480.582 )
+
+[node name="Tabletop" type="Node2D"]
 scale = Vector2( 1.25004, 1.25004 )
 script = ExtResource( 3 )
 
-[node name="tabletop" type="Sprite" parent="."]
+[node name="RightButton" type="Area2D" parent="."]
+position = Vector2( 5.96046e-08, 0 )
+scale = Vector2( 1.00121, 0.99712 )
+z_index = 2
+script = ExtResource( 5 )
+scrollDirection = -1
+
+[node name="color" type="Sprite" parent="RightButton"]
+position = Vector2( 1039.05, 230.652 )
+scale = Vector2( 0.313369, 3.27256 )
+texture = ExtResource( 7 )
+offset = Vector2( -101.271, -4.64097 )
+
+[node name="double_arrow" type="Sprite" parent="RightButton"]
 visible = false
-position = Vector2( 509.75, 274.75 )
-scale = Vector2( 0.966235, 1.00897 )
-texture = ExtResource( 1 )
-
-[node name="hand" type="Node2D" parent="."]
-
-[node name="ColorRect3" type="ColorRect" parent="hand"]
-margin_top = 416.0
-margin_right = 108.0
-margin_bottom = 576.0
-rect_pivot_offset = Vector2( 248, 104 )
-mouse_filter = 2
-color = Color( 0.133333, 0.235294, 0.780392, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect4" type="ColorRect" parent="hand"]
-margin_left = 108.0
-margin_top = 416.0
-margin_right = 216.0
-margin_bottom = 576.0
-rect_pivot_offset = Vector2( 140, 104 )
-mouse_filter = 2
-color = Color( 0.329412, 0.14902, 0.14902, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect5" type="ColorRect" parent="hand"]
-margin_left = 216.0
-margin_top = 416.0
-margin_right = 324.0
-margin_bottom = 576.0
-rect_pivot_offset = Vector2( 248, 104 )
-mouse_filter = 2
-color = Color( 0.133333, 0.235294, 0.780392, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect6" type="ColorRect" parent="hand"]
-margin_left = 324.0
-margin_top = 416.0
-margin_right = 432.0
-margin_bottom = 576.0
-rect_pivot_offset = Vector2( 140, 104 )
-mouse_filter = 2
-color = Color( 0.329412, 0.14902, 0.14902, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect7" type="ColorRect" parent="hand"]
-margin_left = 432.0
-margin_top = 416.0
-margin_right = 540.0
-margin_bottom = 576.0
-rect_pivot_offset = Vector2( 248, 104 )
-mouse_filter = 2
-color = Color( 0.133333, 0.235294, 0.780392, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="hand"]
-margin_left = 540.0
-margin_top = 416.0
-margin_right = 648.0
-margin_bottom = 576.0
-rect_pivot_offset = Vector2( 140, 104 )
-mouse_filter = 2
-color = Color( 0.329412, 0.14902, 0.14902, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="hand"]
-margin_left = 648.0
-margin_top = 416.0
-margin_right = 756.0
-margin_bottom = 576.0
-rect_pivot_offset = Vector2( 248, 104 )
-mouse_filter = 2
-color = Color( 0.133333, 0.235294, 0.780392, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="hand"]
-margin_left = 756.0
-margin_top = 416.0
-margin_right = 864.0
-margin_bottom = 576.0
-rect_pivot_offset = Vector2( 140, 104 )
-mouse_filter = 2
-color = Color( 0.329412, 0.14902, 0.14902, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="hand"]
-margin_left = 864.0
-margin_top = 416.0
-margin_right = 1024.0
-margin_bottom = 576.0
-rect_pivot_offset = Vector2( 140, 104 )
-mouse_filter = 2
-color = Color( 0.168627, 0.329412, 0.14902, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="hand"]
-margin_left = 1.0
-margin_top = 391.0
-margin_right = 323.0
-margin_bottom = 412.0
-mouse_filter = 2
-color = Color( 0.172549, 0.027451, 0.686275, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="hand"]
-margin_left = 865.0
-margin_top = 391.0
-margin_right = 1023.0
-margin_bottom = 412.0
-mouse_filter = 2
-color = Color( 0.635294, 0.027451, 0.686275, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect2" type="ColorRect" parent="hand"]
-margin_left = 324.0
-margin_top = 391.0
-margin_right = 863.0
-margin_bottom = 412.0
-mouse_filter = 2
-color = Color( 0.686275, 0.6, 0.027451, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="board" type="Node2D" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="board"]
-margin_left = 15.0
-margin_top = 20.0
-margin_right = 735.0
-margin_bottom = 378.0
-mouse_filter = 2
-color = Color( 0.517647, 0.156863, 0.156863, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect5" type="ColorRect" parent="board"]
-margin_left = 755.0
-margin_top = 20.0
-margin_right = 1144.0
-margin_bottom = 378.0
-mouse_filter = 2
-color = Color( 0.517647, 0.156863, 0.156863, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect2" type="ColorRect" parent="board"]
-margin_left = 52.0
-margin_top = 84.0
-margin_right = 221.0
-margin_bottom = 313.0
-mouse_filter = 2
-color = Color( 0.156863, 0.517647, 0.517647, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect3" type="ColorRect" parent="board"]
-margin_left = 286.0
-margin_top = 84.0
-margin_right = 455.0
-margin_bottom = 313.0
-mouse_filter = 2
-color = Color( 0.156863, 0.517647, 0.517647, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect7" type="ColorRect" parent="board"]
-margin_left = 179.0
-margin_top = 18.0
-margin_right = 563.0
-margin_bottom = 70.0
-mouse_filter = 2
-color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect12" type="ColorRect" parent="board"]
-margin_left = 919.0
-margin_top = 20.0
-margin_right = 1067.0
-margin_bottom = 72.0
-mouse_filter = 2
-color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect8" type="ColorRect" parent="board"]
-margin_left = 36.4697
-margin_top = 329.116
-margin_right = 236.47
-margin_bottom = 356.116
-mouse_filter = 2
-color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect9" type="ColorRect" parent="board"]
-margin_left = 270.659
-margin_top = 329.116
-margin_right = 470.659
-margin_bottom = 356.116
-mouse_filter = 2
-color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect10" type="ColorRect" parent="board"]
-margin_left = 511.997
-margin_top = 329.116
-margin_right = 711.997
-margin_bottom = 356.116
-mouse_filter = 2
-color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect11" type="ColorRect" parent="board"]
-margin_left = 777.299
-margin_top = 329.116
-margin_right = 977.299
-margin_bottom = 356.116
-mouse_filter = 2
-color = Color( 0.490196, 0.156863, 0.517647, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect4" type="ColorRect" parent="board"]
-margin_left = 528.0
-margin_top = 84.0
-margin_right = 698.0
-margin_bottom = 313.0
-mouse_filter = 2
-color = Color( 0.156863, 0.517647, 0.517647, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect6" type="ColorRect" parent="board"]
-margin_left = 791.51
-margin_top = 84.0
-margin_right = 961.51
-margin_bottom = 313.0
-mouse_filter = 2
-color = Color( 0.156863, 0.517647, 0.517647, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="card" type="Control" parent="board"]
-margin_right = 40.0
-margin_bottom = 40.0
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="board/card"]
-margin_left = 62.0
-margin_top = 94.0
-margin_right = 210.0
-margin_bottom = 303.0
-mouse_filter = 2
-color = Color( 0.016098, 0.824219, 0.0666056, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect2" type="ColorRect" parent="board/card"]
-margin_left = 297.0
-margin_top = 94.0
-margin_right = 372.0
-margin_bottom = 197.0
-mouse_filter = 2
-color = Color( 0.016098, 0.824219, 0.0666056, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect4" type="ColorRect" parent="board/card"]
-margin_left = 297.0
-margin_top = 200.404
-margin_right = 372.0
-margin_bottom = 303.404
-mouse_filter = 2
-color = Color( 0.016098, 0.824219, 0.0666056, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect3" type="ColorRect" parent="board/card"]
-margin_left = 374.67
-margin_top = 94.0
-margin_right = 449.67
-margin_bottom = 197.0
-mouse_filter = 2
-color = Color( 0.016098, 0.824219, 0.0666056, 0.392157 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 53.5, 496 )
-scale = Vector2( 0.0536946, 0.053872 )
-texture = ExtResource( 2 )
-normal_map = ExtResource( 2 )
+modulate = Color( 0.0313726, 0.0235294, 0.0235294, 1 )
+position = Vector2( 1039.05, 230.652 )
+scale = Vector2( 0.0759306, 0.0562746 )
+texture = ExtResource( 6 )
+offset = Vector2( -416.742, -262.508 )
+flip_h = true
 region_enabled = true
-region_rect = Rect2( 80, 10, 2030, 2970 )
+region_rect = Rect2( 450, 10, 450, 460 )
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 1, 0 )
+[node name="simple_arrow" type="Sprite" parent="RightButton"]
+modulate = Color( 0.0313726, 0.0235294, 0.0235294, 1 )
+position = Vector2( 1039.05, 230.652 )
+scale = Vector2( 0.0871505, 0.0590731 )
+texture = ExtResource( 6 )
+offset = Vector2( -363.091, -250.072 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 20, 10, 410, 450 )
 
-[node name="Button" type="Button" parent="Area2D"]
-margin_left = 991.2
-margin_top = 48.7997
-margin_right = 1022.2
-margin_bottom = 384.8
-mouse_filter = 2
-mouse_default_cursor_shape = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightButton"]
 position = Vector2( 1006.96, 215.879 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
-[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
+[node name="LeftButton" type="Area2D" parent="."]
+position = Vector2( 5.96046e-08, 0 )
+scale = Vector2( 1.00121, 0.99712 )
+z_index = 2
+script = ExtResource( 5 )
+scrollDirection = 1
+
+[node name="color" type="Sprite" parent="LeftButton"]
+position = Vector2( 47.4037, 230.652 )
+scale = Vector2( 0.313369, 3.27256 )
+texture = ExtResource( 7 )
+offset = Vector2( -101.271, -4.64097 )
+
+[node name="double_arrow" type="Sprite" parent="LeftButton"]
+visible = false
+modulate = Color( 0.0313726, 0.0235294, 0.0235294, 1 )
+position = Vector2( 47.4037, 230.652 )
+scale = Vector2( 0.0759306, 0.0562746 )
+texture = ExtResource( 6 )
+offset = Vector2( -416.742, -262.508 )
+region_enabled = true
+region_rect = Rect2( 450, 10, 450, 460 )
+
+[node name="simple_arrow" type="Sprite" parent="LeftButton"]
+modulate = Color( 0.0313726, 0.0235294, 0.0235294, 1 )
+position = Vector2( 47.4037, 230.652 )
+scale = Vector2( 0.0871505, 0.0590731 )
+texture = ExtResource( 6 )
+offset = Vector2( -363.091, -250.072 )
+region_enabled = true
+region_rect = Rect2( 20, 10, 410, 450 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftButton"]
+position = Vector2( 15.7602, 215.879 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="Hand" parent="." instance=ExtResource( 2 )]
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Board" parent="." instance=ExtResource( 4 )]
+scale = Vector2( 0.8, 0.8 )
+
+[node name="GlobalArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GlobalArea"]
+visible = false
+position = Vector2( 512, 288 )
+shape = SubResource( 2 )
+
+[connection signal="ent_scrollButton" from="RightButton" to="." method="_on_Area2D_ent_scrollButton"]
+[connection signal="ext_scrollButton" from="RightButton" to="." method="_on_Area2D_ext_scrollButton"]
+[connection signal="input_event" from="RightButton" to="RightButton" method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="RightButton" to="RightButton" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="RightButton" to="RightButton" method="_on_Area2D_mouse_exited"]
+[connection signal="p_scrollButton" from="RightButton" to="." method="_on_Area2D_p_scrollButton"]
+[connection signal="r_scrollButton" from="RightButton" to="." method="_on_Area2D_r_scrollButton"]
+[connection signal="ent_scrollButton" from="LeftButton" to="." method="_on_Area2D_ent_scrollButton"]
+[connection signal="ext_scrollButton" from="LeftButton" to="." method="_on_Area2D_ext_scrollButton"]
+[connection signal="input_event" from="LeftButton" to="LeftButton" method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="LeftButton" to="LeftButton" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="LeftButton" to="LeftButton" method="_on_Area2D_mouse_exited"]
+[connection signal="p_scrollButton" from="LeftButton" to="." method="_on_Area2D_p_scrollButton"]
+[connection signal="r_scrollButton" from="LeftButton" to="." method="_on_Area2D_r_scrollButton"]
+[connection signal="ent_deck" from="Hand" to="." method="_on_Hand_ent_deck"]
+[connection signal="ext_deck" from="Hand" to="." method="_on_Hand_ext_deck"]
+[connection signal="p_deck" from="Hand" to="." method="_on_Hand_p_deck"]
+[connection signal="p_unfoldButton" from="Hand" to="." method="_on_Hand_p_unfoldButton"]
+[connection signal="ent_target" from="Board" to="." method="_on_Board_ent_target"]
+[connection signal="ext_target" from="Board" to="." method="_on_Board_ext_target"]
+[connection signal="p_card" from="Board" to="." method="_on_Board_p_card"]
+[connection signal="input_event" from="GlobalArea" to="." method="_on_Area2D3_input_event"]
