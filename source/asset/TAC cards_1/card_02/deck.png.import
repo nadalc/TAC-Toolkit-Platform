@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/deck_1.png-9716784f8b965b113706fbd7a2b49630.stex"
+path="res://.import/deck.png-75f1a9bc75f2e65b9fd9ec2b6a32bbe9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/deck_1.png"
-dest_files=[ "res://.import/deck_1.png-9716784f8b965b113706fbd7a2b49630.stex" ]
+source_file="res://asset/TAC cards_1/card_02/deck.png"
+dest_files=[ "res://.import/deck.png-75f1a9bc75f2e65b9fd9ec2b6a32bbe9.stex" ]
 
 [params]
 
