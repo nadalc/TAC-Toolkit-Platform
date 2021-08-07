@@ -8,15 +8,148 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Role",
+"class": "Administator",
+"language": "GDScript",
+"path": "res://source/participant/Administrator.gd"
+}, {
+"base": "Node",
+"class": "Card",
+"language": "GDScript",
+"path": "res://source/scenario/Card.gd"
+}, {
+"base": "Node",
+"class": "CardGrab",
+"language": "GDScript",
+"path": "res://source/tabletop/CardGrab.gd"
+}, {
+"base": "Node",
+"class": "Chapter",
+"language": "GDScript",
+"path": "res://source/scenario/Chapter.gd"
+}, {
+"base": "Node",
+"class": "Deck",
+"language": "GDScript",
+"path": "res://source/util/Deck.gd"
+}, {
+"base": "Role",
+"class": "Designer",
+"language": "GDScript",
+"path": "res://source/participant/Designer.gd"
+}, {
+"base": "Node",
+"class": "DrawCard",
+"language": "GDScript",
+"path": "res://source/util/DrawCard.gd"
+}, {
+"base": "Deck",
+"class": "HelloCards",
+"language": "GDScript",
+"path": "res://source/util/HelloCards.gd"
+}, {
+"base": "Node",
+"class": "Math_",
+"language": "GDScript",
+"path": "res://source/util/Math_.gd"
+}, {
+"base": "Node",
+"class": "Participant",
+"language": "GDScript",
+"path": "res://source/participant/Participant.gd"
+}, {
+"base": "Node",
+"class": "RandomC",
+"language": "GDScript",
+"path": "res://source/util/RandColor.gd"
+}, {
+"base": "Node",
+"class": "Role",
+"language": "GDScript",
+"path": "res://source/participant/Role.gd"
+}, {
+"base": "Node",
+"class": "Scenario",
+"language": "GDScript",
+"path": "res://source/scenario/Scenario.gd"
+}, {
+"base": "Role",
+"class": "Spectator",
+"language": "GDScript",
+"path": "res://source/participant/Spectator.gd"
+}, {
+"base": "Node",
+"class": "Step",
+"language": "GDScript",
+"path": "res://source/scenario/Step.gd"
+}, {
+"base": "Node",
+"class": "Tabletop",
+"language": "GDScript",
+"path": "res://source/tabletop/Tabletop.gd"
+}, {
+"base": "Deck",
+"class": "TacCards",
+"language": "GDScript",
+"path": "res://source/util/TacCards.gd"
+}, {
+"base": "DrawCard",
+"class": "TacDrawCard",
+"language": "GDScript",
+"path": "res://source/util/TacDrawCard.gd"
+}, {
+"base": "Role",
+"class": "User",
+"language": "GDScript",
+"path": "res://source/participant/User.gd"
+} ]
+_global_script_class_icons={
+"Administator": "",
+"Card": "",
+"CardGrab": "",
+"Chapter": "",
+"Deck": "",
+"Designer": "",
+"DrawCard": "",
+"HelloCards": "",
+"Math_": "",
+"Participant": "",
+"RandomC": "",
+"Role": "",
+"Scenario": "",
+"Spectator": "",
+"Step": "",
+"Tabletop": "",
+"TacCards": "",
+"TacDrawCard": "",
+"User": ""
+}
+
 [application]
 
 config/name="TAC Toolkit System"
-run/main_scene="res://test/tests.tscn"
-config/icon="res://miscellaneous/icon.png"
+run/main_scene="res://scene/tabletop/Tabletop.tscn"
+config/icon="res://asset/logo.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/gut/plugin.cfg" )
+
+[input]
+
+ui_leftclick={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [physics]
 
@@ -24,4 +157,10 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+2d/options/use_nvidia_rect_flicker_workaround=true
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
+2d/snapping/use_gpu_pixel_snap=true
+environment/default_clear_color=Color( 0.71, 0.70361, 0.5822, 1 )
+quality/filters/msaa=4
 environment/default_environment="res://miscellaneous/default_env.tres"

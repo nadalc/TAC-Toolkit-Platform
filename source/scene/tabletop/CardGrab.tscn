@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://source/tabletop/CardGrab.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 72.8767, 108.181 )
+
+[node name="CardGrab" type="Node2D"]
+z_index = 3
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.075, 0.075 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 125, 75, 1940, 2890 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 72.7804, 108.465 )
+shape = SubResource( 1 )
