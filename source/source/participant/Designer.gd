@@ -17,8 +17,9 @@ func viewPersona() -> void:
 	#show Persona
 	pass
 
-func addCard(cardType : String, step : Step) -> void:
+func addCard(cardType : String, step : Step) -> bool:
 	step.addCard(cardType)
+	return true
 
 func removeCard(card : Card, step : Step) -> void:
 	step.hideCard(card)

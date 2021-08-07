@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scene/tabletop/hand/Hand.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene/tabletop/Tabletop.gd" type="Script" id=3]
+[ext_resource path="res://scene/tabletop/board/Board.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/tabletop/Area2D.gd" type="Script" id=5]
+[ext_resource path="res://asset/color_arrow.png" type="Texture" id=6]
+[ext_resource path="res://asset/color.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.844, 163.88 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 735.962, 480.582 )
+
+[node name="Tabletop" type="Node2D"]
+scale = Vector2( 1.25004, 1.25004 )
+script = ExtResource( 3 )
+
+[node name="RightButton" type="Area2D" parent="."]
+position = Vector2( 5.96046e-08, 0 )
+scale = Vector2( 1.00121, 0.99712 )
+z_index = 2
+script = ExtResource( 5 )
+scrollDirection = -1
+
+[node name="color" type="Sprite" parent="RightButton"]
+position = Vector2( 1039.05, 230.652 )
+scale = Vector2( 0.313369, 3.27256 )
+texture = ExtResource( 7 )
+offset = Vector2( -101.271, -4.64097 )
+
+[node name="double_arrow" type="Sprite" parent="RightButton"]
+visible = false
+modulate = Color( 0.0313726, 0.0235294, 0.0235294, 1 )
+position = Vector2( 1039.05, 230.652 )
+scale = Vector2( 0.0759306, 0.0562746 )
+texture = ExtResource( 6 )
+offset = Vector2( -416.742, -262.508 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 450, 10, 450, 460 )
+
+[node name="simple_arrow" type="Sprite" parent="RightButton"]
+modulate = Color( 0.0313726, 0.0235294, 0.0235294, 1 )
+position = Vector2( 1039.05, 230.652 )
+scale = Vector2( 0.0871505, 0.0590731 )
+texture = ExtResource( 6 )
+offset = Vector2( -363.091, -250.072 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 20, 10, 410, 450 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightButton"]
+position = Vector2( 1006.96, 215.879 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="LeftButton" type="Area2D" parent="."]
+position = Vector2( 5.96046e-08, 0 )
+scale = Vector2( 1.00121, 0.99712 )
+z_index = 2
+script = ExtResource( 5 )
+scrollDirection = 1
+
+[node name="color" type="Sprite" parent="LeftButton"]
+position = Vector2( 47.4037, 230.652 )
+scale = Vector2( 0.313369, 3.27256 )
+texture = ExtResource( 7 )
+offset = Vector2( -101.271, -4.64097 )
+
+[node name="double_arrow" type="Sprite" parent="LeftButton"]
+visible = false
+modulate = Color( 0.0313726, 0.0235294, 0.0235294, 1 )
+position = Vector2( 47.4037, 230.652 )
+scale = Vector2( 0.0759306, 0.0562746 )
+texture = ExtResource( 6 )
+offset = Vector2( -416.742, -262.508 )
+region_enabled = true
+region_rect = Rect2( 450, 10, 450, 460 )
+
+[node name="simple_arrow" type="Sprite" parent="LeftButton"]
+modulate = Color( 0.0313726, 0.0235294, 0.0235294, 1 )
+position = Vector2( 47.4037, 230.652 )
+scale = Vector2( 0.0871505, 0.0590731 )
+texture = ExtResource( 6 )
+offset = Vector2( -363.091, -250.072 )
+region_enabled = true
+region_rect = Rect2( 20, 10, 410, 450 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftButton"]
+position = Vector2( 15.7602, 215.879 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="Hand" parent="." instance=ExtResource( 2 )]
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Board" parent="." instance=ExtResource( 4 )]
+scale = Vector2( 0.8, 0.8 )
+
+[node name="GlobalArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GlobalArea"]
+visible = false
+position = Vector2( 512, 288 )
+shape = SubResource( 2 )
+
+[connection signal="ent_scrollButton" from="RightButton" to="." method="_on_Area2D_ent_scrollButton"]
+[connection signal="ext_scrollButton" from="RightButton" to="." method="_on_Area2D_ext_scrollButton"]
+[connection signal="input_event" from="RightButton" to="RightButton" method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="RightButton" to="RightButton" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="RightButton" to="RightButton" method="_on_Area2D_mouse_exited"]
+[connection signal="p_scrollButton" from="RightButton" to="." method="_on_Area2D_p_scrollButton"]
+[connection signal="r_scrollButton" from="RightButton" to="." method="_on_Area2D_r_scrollButton"]
+[connection signal="ent_scrollButton" from="LeftButton" to="." method="_on_Area2D_ent_scrollButton"]
+[connection signal="ext_scrollButton" from="LeftButton" to="." method="_on_Area2D_ext_scrollButton"]
+[connection signal="input_event" from="LeftButton" to="LeftButton" method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="LeftButton" to="LeftButton" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="LeftButton" to="LeftButton" method="_on_Area2D_mouse_exited"]
+[connection signal="p_scrollButton" from="LeftButton" to="." method="_on_Area2D_p_scrollButton"]
+[connection signal="r_scrollButton" from="LeftButton" to="." method="_on_Area2D_r_scrollButton"]
+[connection signal="ent_deck" from="Hand" to="." method="_on_Hand_ent_deck"]
+[connection signal="ext_deck" from="Hand" to="." method="_on_Hand_ext_deck"]
+[connection signal="p_deck" from="Hand" to="." method="_on_Hand_p_deck"]
+[connection signal="p_unfoldButton" from="Hand" to="." method="_on_Hand_p_unfoldButton"]
+[connection signal="ent_target" from="Board" to="." method="_on_Board_ent_target"]
+[connection signal="ext_target" from="Board" to="." method="_on_Board_ext_target"]
+[connection signal="p_card" from="Board" to="." method="_on_Board_p_card"]
+[connection signal="input_event" from="GlobalArea" to="." method="_on_Area2D3_input_event"]
