@@ -10,7 +10,7 @@ The personas that allow designers (stakeholders) to have access to archetypes of
 The Storyboard is a role-playing board (1 user, 2 designers). This board allows for each step in f the user (the persona)’s journey to reflect on the factors influencing user acceptance (through the TAC cards).
 The idea is to create a software: TAC Toolkit platform (also called “TAC Toolkit system”)
 
-![alt text](./screenshot/TAC%20toolkit%20platform.png?raw=true)
+<img src="./screenshot/TAC%20toolkit%20platform.png?raw=true" width="100" height="100">
 
 ### How to modify scenario and set of cards
 
