@@ -32,7 +32,7 @@ In each folder "card_x", add a .png for each type (deck, card, card_valid and in
 Take care when you change assets, they might don't look correctly.
 You will have to check for each Sprite, if the region is disabled.
 
-<img src="screenshot/region%20enabled.png.png?raw=true" width="200">
+<img src="screenshot/region%20enabled.png?raw=true" width="200">
 
 ### How to make an executable
 
@@ -40,5 +40,6 @@ You will have to check for each Sprite, if the region is disabled.
 
 <img src="screenshot/add%20export%20option.png?raw=true" width="500">
 
-Make sure, "export with debug" is disabled
+Make sure, "export with debug" is disabled.
+
 <img src="screenshot/export.png?raw=true" width="500">
